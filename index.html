@@ -3,275 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>城崎温泉と有馬温泉 比較</title>
-    <style>
-        /* --- CSSコード --- */
-        :root {
-            --color-kinosaki: #1e88e5; /* 城崎ブルー */
-            --color-arima: #d84315;    /* 有馬の金泉レッド */
-            --color-primary-text: #333;
-            --color-secondary-text: #666;
-            --color-background: #f4f7f6;
-            --color-border: #ddd;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--color-background);
-            color: var(--color-primary-text);
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-
-        .comparison-table {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden; /* 角丸を適用するために必要 */
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 18px 15px;
-            border-bottom: 1px solid var(--color-border);
-            text-align: left;
-        }
-
-        /* ヘッダーのスタイル */
-        .comparison-table thead th {
-            background-color: #ecf0f1;
-            color: #2c3e50;
-            font-size: 1.1em;
-            font-weight: bold;
-            border-bottom: 3px solid #bdc3c7;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        /* 項目名の列 */
-        .comparison-table td:first-child {
-            background-color: #f8f9fa;
-            font-weight: bold;
-            color: #444;
-            width: 25%; /* 項目名の幅を固定 */
-        }
-
-        /* 特色を強調 */
-        .comparison-table tr:nth-child(2) td:not(:first-child),
-        .comparison-table tr:nth-child(4) td:not(:first-child) {
-            background-color: #fff3e0;
-        }
-        
-        /* 列ごとの色分け */
-        .comparison-table th:nth-child(2),
-        .comparison-table td:nth-child(2) {
-            border-left: 5px solid var(--color-kinosaki);
-        }
-
-        .comparison-table th:nth-child(3),
-        .comparison-table td:nth-child(3) {
-            border-left: 5px solid var(--color-arima);
-        }
-
-        /* ホバーエフェクト */
-        .comparison-table tbody tr:hover {
-            background-color: #e8f5e9;
-            transition: background-color 0.3s ease;
-        }
-
-        /* おすすめの強調 */
-        .recommendation {
-            font-size: 0.9em;
-            color: var(--color-secondary-text);
-            margin-top: 5px;
-            padding: 5px;
-            border-radius: 4px;
-        }
-
-        .recommendation strong {
-            color: #e67e22;
-        }
-
-        /* モバイル対応（メディアクエリ） */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 20px;
-            }
-
-            .comparison-table {
-                font-size: 12px;
-            }
-            /* .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table th, .comparison-table td {
-                display: block;
-                width: 100%;
-            } */
-
-            /* .comparison-table thead {
-                display: none;
-            } */
-
-            /* .comparison-table tr {
-                margin-bottom: 15px;
-                border: 1px solid var(--color-border);
-                border-radius: 8px;
-                overflow: hidden;
-            }
-
-            .comparison-table td {
-                text-align: right;
-                position: relative;
-                padding-left: 50%;
-                border: none;
-                border-bottom: 1px dotted var(--color-border);
-            } */
-
-            /* 項目名（ラベル）をtdのbefore疑似要素で表示 */
-            /* .comparison-table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 15px;
-                width: calc(50% - 30px);
-                padding-right: 10px;
-                white-space: nowrap;
-                font-weight: bold;
-                color: #2c3e50;
-                text-align: left;
-            } */
-
-            /* モバイルで色分けボーダーを上に表示 */
-            /* .comparison-table td:nth-child(2) {
-                border-top: 5px solid var(--color-kinosaki);
-                border-left: none;
-            }
-
-            .comparison-table td:nth-child(3) {
-                border-top: 5px solid var(--color-arima);
-                border-left: none;
-            } */
-
-            /* .comparison-table td:first-child {
-                display: none;
-            } */
-
-            /* .comparison-table tr:last-child {
-                border-bottom: 1px solid var(--color-border);
-            } */
-        }
-        
-        /* JavaScriptによる強調表示のためのクラス */
-        .highlight {
-            animation: pulse 1.5s infinite alternate;
-        }
-
-        @keyframes pulse {
-            from { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); }
-            to { box-shadow: 0 0 10px 5px rgba(230, 126, 34, 0.8); }
-        }
-
-    </style>
+    <title>マイ ポートフォリオ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>♨️ 城崎温泉 vs 有馬温泉 徹底比較 ♨️</h1>
+    <header>
+        <h1>あなたの名前</h1>
+        <p>ウェブデベロッパー見習い</p>
+    </header>
 
-    <table class="comparison-table">
-        <thead>
-            <tr>
-                <th>項目</th>
-                <th style="color: var(--color-kinosaki);">城崎温泉</th>
-                <th style="color: var(--color-arima);">有馬温泉</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td data-label="場所">場所</td>
-                <td data-label="城崎温泉">兵庫県豊岡市（日本海側）</td>
-                <td data-label="有馬温泉">兵庫県神戸市（六甲山の裏側）</td>
-            </tr>
-            <tr>
-                <td data-label="大阪からのアクセス">大阪からのアクセス</td>
-                <td data-label="城崎温泉">比較的時間がかかる。特急で約2時間40分〜3時間程度。</td>
-                <td data-label="有馬温泉">比較的近い。高速バスで**約1時間〜1時間30分程度**。**日帰りしやすい。**</td>
-            </tr>
-            <tr>
-                <td data-label="泉質">泉質</td>
-                <td data-label="城崎温泉">塩化物泉など。無色透明。</td>
-                <td data-label="有馬温泉">**金泉**（赤茶色に濁る）と**銀泉**（無色透明）の2種類。</td>
-            </tr>
-            <tr>
-                <td data-label="温泉街の特色">温泉街の特色</td>
-                <td data-label="城崎温泉">**「外湯めぐり」が最大の魅力**。浴衣姿で巡る情緒ある街並み。</td>
-                <td data-label="有馬温泉">コンパクト。歴史ある高級旅館が多い。「関西の奥座敷」。</td>
-            </tr>
-            <tr>
-                <td data-label="飲食店・グルメ">飲食店・グルメ</td>
-                <td data-label="城崎温泉">**カニ**（特に冬場）、但馬牛、海産物、温泉たまご。</td>
-                <td data-label="有馬温泉">神戸牛、炭酸せんべい、佃煮など。老舗の食事処やカフェ。</td>
-            </tr>
-            <tr>
-                <td data-label="観光・アクティビティ">観光・アクティビティ</td>
-                <td data-label="城崎温泉">外湯めぐり、温泉寺、ロープウェイで登る展望台。</td>
-                <td data-label="有馬温泉">温泉街散策、ロープウェイで六甲山へのアクセス。</td>
-            </tr>
-            <tr class="recommendation-row">
-                <td data-label="おすすめな人">おすすめな人</td>
-                <td data-label="城崎温泉">
-                    <div class="recommendation" id="kinosaki-rec">
-                        非日常感や旅情を重視する人、浴衣で外湯めぐりを体験したい人、**カニなどの海産物**を楽しみたい人。
-                    </div>
-                </td>
-                <td data-label="有馬温泉">
-                    <div class="recommendation" id="arima-rec">
-                        アクセスや利便性を重視する人、日帰りや短時間の滞在、**歴史ある高級宿でゆっくり**したい人、**金泉**を体験したい人。
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <main>
+        
+        <section id="about">
+            <h2>自己紹介</h2>
+            <p>こんにちは！コーディングを学んでいるところです。シンプルで使いやすいウェブサイトを作るのが目標です。</p>
+        </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const table = document.querySelector('.comparison-table');
-            const kinosakiRec = document.getElementById('kinosaki-rec');
-            const arimaRec = document.getElementById('arima-rec');
+        <section id="projects">
+            <h2>プロジェクト</h2>
+            <div class="project-item">
+                <h3>プロジェクト 1: シンプルなランディングページ</h3>
+                <a href="arima.html" class="link-button" id="project-link">有馬温泉 🚀</a>
+                <p>初めて作成したHTMLとCSSのみのシンプルなページです。</p>
+            </div>
+        </section>
 
-            // 1. アクセスの良さを強調するアニメーション
-            // 有馬温泉のアクセスが良いことを強調
-            const arimaAccessCell = table.querySelector('td[data-label="有馬温泉"]:nth-child(3)');
-            if (arimaAccessCell) {
-                // 3秒後にアニメーション開始
-                setTimeout(() => {
-                    arimaAccessCell.classList.add('highlight');
-                    // 6秒後にアニメーション終了
-                    setTimeout(() => {
-                        arimaAccessCell.classList.remove('highlight');
-                    }, 6000);
-                }, 3000);
-            }
+        <section id="contact">
+            <h2>連絡先</h2>
+            <button id="js-test-button">JavaScriptをテストする</button>
+            <p>ボタンをクリックするとアラートが表示されます。</p>
+        </section>
 
-            // 2. モバイル時の項目名表示（CSSで実現済みだが、念のため）
-            // モバイル時はCSSのdata-label属性を利用して項目名を表示しています。
-            
-            // 3. マウスオーバー時の簡単なエフェクト
-            table.querySelectorAll('tbody tr').forEach(row => {
-                row.addEventListener('mouseover', () => {
-                    row.style.backgroundColor = '#e0f7fa'; // ホバー時の色変更
-                });
-                row.addEventListener('mouseout', () => {
-                    row.style.backgroundColor = ''; // 色を元に戻す（CSSのホバーを優先）
-                });
-            });
-        });
-    </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
