@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // [おまけ] プロジェクトリンクがクリックされた時の処理（なくても動きます）
+    // [おまけ] プロジェクトリンクがクリックされた時の処理（なくても動きます）id="project-link"今は不要なため削除済み
     const projectLink = document.getElementById('project-link');
     if (projectLink) {
         projectLink.addEventListener('click', (event) => {
