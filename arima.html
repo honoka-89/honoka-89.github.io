@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♨️ 有馬温泉 徹底ガイド</title>
+    <style>
+        /* --- CSSコード --- */
+        :root {
+            --color-gold: #d84315; /* 金泉色（濃い赤茶） */
+            --color-silver: #a0a0a0; /* 銀泉色（シルバー/グレー） */
+            --color-text-dark: #333;
+            --color-text-light: #f9f9f9;
+            --color-background: #f4f7f6;
+            --color-accent: #e67e22;
+            --color-card-bg: white;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--color-gold);
+            margin-bottom: 10px;
+            font-size: 2.2em;
+            border-bottom: 3px solid var(--color-gold);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.6em;
+            color: var(--color-text-dark);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid var(--color-accent);
+        }
+        
+        /* --- 泉質セクション --- */
+        .onsen-grid {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap; /* モバイル対応 */
+        }
+
+        .onsen-card {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: var(--color-text-light);
+        }
+
+        .onsen-card.gold {
+            background-color: var(--color-gold);
+            background: linear-gradient(135deg, #d84315, #ff7043);
+        }
+
+        .onsen-card.silver {
+            background-color: var(--color-silver);
+            background: linear-gradient(135deg, #a0a0a0, #cccccc);
+        }
+
+        .onsen-card h3 {
+            font-size: 1.4em;
+            margin-top: 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .onsen-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .onsen-card li {
+            margin-bottom: 5px;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        /* --- 一般情報セクション (テーブル) --- */
+        .info-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .info-table th, .info-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-table th {
+            background-color: #e0f2f1;
+            width: 30%;
+            text-align: left;
+            font-weight: bold;
+            color: #00796b;
+        }
+
+        .info-table tr:last-child th, .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* --- グルメ・観光セクション (リスト) --- */
+        .spot-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .spot-item {
+            background-color: var(--color-card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .spot-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .spot-item h4 {
+            color: var(--color-accent);
+            margin-top: 0;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .spot-item p {
+            font-size: 0.9em;
+            color: var(--color-secondary-text);
+        }
+
+        /* --- モバイル対応 --- */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .onsen-grid {
+                flex-direction: column;
+            }
+
+            .onsen-card {
+                min-width: 100%;
+            }
+
+            .info-table th, .info-table td {
+                display: block;
+                width: 100%;
+                text-align: left !important;
+            }
+            
+            .info-table th {
+                background-color: #f0f0f0;
+                border-bottom: none;
+                padding-bottom: 5px;
+            }
+            
+            .info-table td {
+                padding-top: 5px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html">HOMEへ</a>
+        <h1>♨️ 有馬温泉 徹底ガイド：名湯と歴史を巡る旅</h1>
+        <p style="text-align: center; font-style: italic; color: var(--color-secondary-text);">大阪からも近く、日帰りも可能な日本三古泉の一つ。最高の温泉体験を！</p>
+
+        <h2 class="section-title">1. 二つの名湯「金泉」と「銀泉」</h2>
+        <div class="onsen-grid">
+            <div class="onsen-card gold">
+                <h3>金泉 (きんせん)</h3>
+                <p>**色と泉質:** 鉄分と塩分により**赤茶色に濁る**。含鉄ナトリウム-塩化物強塩高温泉。</p>
+                <p>**効能（代表例）:**</p>
+                <ul>
+                    <li>✅ 強い保温効果（湯冷めしにくい）</li>
+                    <li>✅ 冷え性、腰痛、関節痛</li>
+                    <li>✅ 婦人病、慢性皮膚病</li>
+                </ul>
+            </div>
+            
+            <div class="onsen-card silver">
+                <h3>銀泉 (ぎんせん)</h3>
+                <p>**色と泉質:** 鉄分が少なく**無色透明**。炭酸泉とラジウム泉（放射能泉）の2種類。</p>
+                <p>**効能（代表例）:**</p>
+                <ul>
+                    <li>✅ 新陳代謝の促進、自然治癒力向上</li>
+                    <li>✅ 高血圧症、末梢動脈循環障害</li>
+                    <li>✅ リウマチ、更年期障害</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">2. 基本情報とアクセス</h2>
+        <table class="info-table">
+            <tr>
+                <th>所在地</th>
+                <td>兵庫県神戸市北区</td>
+            </tr>
+            <tr>
+                <th>大阪からのアクセス</th>
+                <td>高速バスで**約1時間〜1時間30分**（日帰り可能）</td>
+            </tr>
+            <tr>
+                <th>温泉街の移動</th>
+                <td>コンパクトで**徒歩での散策が基本**。</td>
+            </tr>
+            <tr>
+                <th>湯めぐり</th>
+                <td>市営の「金の湯」と「銀の湯」で湯比べがおすすめ。</td>
+            </tr>
+        </table>
+
+        <h2 class="section-title">3. グルメ＆観光スポット</h2>
+        <div class="spot-list">
+            <div class="spot-item">
+                <h4>🍵 食べ歩き名物</h4>
+                <p>**炭酸せんべい:** 湯の花堂本舗などで焼きたての「なま」せんべいをぜひ。神戸牛を使った竹中肉店のコロッケも人気。</p>
+            </div>
+            <div class="spot-item">
+                <h4>🍜 おすすめランチ</h4>
+                <p>**有馬十八番**（明石焼き）、**くつろぎ家**（釜飯）、**おだしとおやさい 翠**（せいろ蒸し）など、名店が並びます。</p>
+            </div>
+            <div class="spot-item">
+                <h4>🏯 歴史スポット</h4>
+                <p>**太閤の湯殿館:** 豊臣秀吉ゆかりの湯山御殿の遺構。**湯泉神社**は温泉の守護神です。</p>
+            </div>
+            <div class="spot-item">
+                <h4>⛰️ 絶景・散策</h4>
+                <p>**瑞宝寺公園:** 秋の紅葉の名所。**六甲有馬ロープウェー**で六甲山へ行き、絶景や夜景を楽しむのもおすすめです。</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

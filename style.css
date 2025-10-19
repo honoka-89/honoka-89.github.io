@@ -1,0 +1,115 @@
+/*
+ * モダンなポートフォリオのためのCSS
+ * ----------------------------------
+ * 特徴: クリーンなフォント、余白の活用、シンプルな色使い、控えめな影。
+ */
+
+/* 1. 全体に適用する基本設定 */
+body {
+    /* モダンな印象のために、サンセリフ体かつ一般的なフォントを指定 */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* クリーンな白の背景 */
+    color: #333333;
+    line-height: 1.6; /* 読みやすさ向上のための行間 */
+}
+
+/* 2. ヘッダー (ナビゲーションバーの代わり) */
+header {
+    background-color: #5F7BAA; /* ダークカラーで引き締め */
+    color: white;
+    padding: 60px 20px; /* 上下に大きな余白 */
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 700; /* 太字で強調 */
+}
+
+header p {
+    font-size: 1.2em;
+    color: #cccccc; /* 控えめな色でサブテキストを表現 */
+    margin-top: 5px;
+}
+
+/* 3. メインコンテンツとセクション */
+main {
+    padding: 40px 20px;
+    max-width: 1000px; /* 少し広めに */
+    margin: 0 auto;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 30px; /* セクション間の余白をしっかり取る */
+    border-radius: 10px; /* 少し大きめの角丸 */
+    /* 控えめで立体感のある影 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s ease; /* ホバー時のアニメーション準備 */
+}
+
+section:hover {
+    transform: translateY(-5px); /* ホバーで少し浮き上がらせる */
+}
+
+h2 {
+    color: #6F5FA6;
+    font-size: 2em;
+    font-weight: 600;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* 4. リンクボタンのスタイル */
+.project-item {
+    margin-top: 15px;
+}
+
+.link-button {
+    display: inline-block;
+    background-color: #E9A87B; /* メインカラー (青) */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px; /* 角を丸くしてピル型に */
+    margin-top: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link-button:hover {
+    background-color: #cf7d45; /* 濃い青色に変化 */
+    box-shadow: 0 4px 8px rgba(255, 166, 0, 0.4); /* 影を追加 */
+}
+
+/* 5. JavaScriptテストボタンのスタイル */
+#js-test-button {
+    background-color: #6c757d; /* 控えめなグレー */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+#js-test-button:hover {
+    background-color: #5a6268;
+}
+
+/* 6. フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa; /* 明るいグレー */
+    color: #6c757d;
+    font-size: 0.9em;
+    border-top: 1px solid #eeeeee;
+}
