@@ -3,102 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌊 滋賀県 観光名所ガイド (大阪/梅田発)</title>
-    <link rel="stylesheet" href="style.css">
+    <title>🌊 滋賀県 観光名所ガイド</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    
     <style>
-        /* --- CSSコード --- */
+        /* --- カスタムCSS --- */
         :root {
-            --color-biwako: #29b6f6; /* 琵琶湖ブルー */
-            --color-history: #795548; /* 歴史ブラウン */
-            --color-text-dark: #333;
-            --color-background: #f4f7f6;
-            --color-card-bg: white;
-            --color-accent: #ff9800; /* アクセス強調オレンジ */
+            --bs-biwako: #29b6f6; /* 琵琶湖ブルー */
+            --bs-history: #795548; /* 歴史ブラウン */
+            --bs-accent: #ff9800; /* アクセス強調オレンジ */
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--color-background);
-            color: var(--color-text-dark);
-            line-height: 1.6;
-            padding: 20px;
+            background-color: #f4f7f6;
+            padding-top: 20px;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--color-biwako);
-            margin-bottom: 30px;
-            font-size: 2.2em;
-            border-bottom: 3px solid var(--color-biwako);
+        .custom-title {
+            color: var(--bs-biwako);
+            border-bottom: 3px solid var(--bs-biwako);
             padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* カードヘッダーのカスタムカラー */
+        .card-header-biwako {
+            background-color: var(--bs-biwako);
+            color: white;
+            font-size: 1.25rem;
+            font-weight: bold;
         }
         
-        /* カードコンテナ */
-        .spot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        /* 個別カード */
-        .spot-card {
-            background-color: var(--color-card-bg);
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .spot-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-header {
-            padding: 15px 20px;
+        .card-header-history {
+            background-color: var(--bs-history);
             color: white;
-            font-size: 1.3em;
+            font-size: 1.25rem;
             font-weight: bold;
-            background-color: var(--color-biwako);
         }
 
-        .spot-card:nth-child(2) .card-header,
-        .spot-card:nth-child(4) .card-header {
-            background-color: var(--color-history); /* 歴史スポットの色を変える */
-        }
-
-        .card-body {
-            padding: 20px;
-            flex-grow: 1;
-        }
-
+        /* アクセス情報ボックス */
         .access-info {
             background-color: #e3f2fd;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 1rem;
+            border-radius: 0.3rem;
             margin-top: 15px;
-            border-left: 5px solid var(--color-accent);
+            border-left: 5px solid var(--bs-accent);
         }
 
         .access-info strong {
-            color: var(--color-accent);
+            color: var(--bs-accent);
             display: block;
             margin-bottom: 3px;
         }
 
-        .highlight-text {
-            color: var(--color-gold);
-            font-weight: bold;
+        /* カードのホバーエフェクト */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
         /* JavaScriptによる強調アニメーション */
         @keyframes pulse-access {
             0% { background-color: #fff3e0; }
@@ -110,80 +86,86 @@
             animation: pulse-access 1.5s infinite alternate;
         }
 
-        /* モバイル対応 */
-        @media (max-width: 650px) {
-            .spot-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <a href="index.html">HOMEへ</a>
-        <h1>🏯 滋賀県 観光名所ガイド - 大阪/梅田から日帰りOK！</h1>
+        <div class="block mb-3">
+            <a class="btn btn-primary" href="index.html" role="button">HOME<i class="fa-solid fa-house ms-1"></i></a>
+        </div>
+        <h1 class="text-center custom-title">🏯 滋賀県 観光名所ガイド - 大阪/梅田から日帰りOK！</h1>
         
-        <p style="text-align: center; color: var(--color-text-dark); margin-bottom: 40px;">JR新快速を利用すれば、1時間前後でアクセスできるスポットが豊富です。</p>
+        <p class="text-center text-secondary mb-5">
+            JR新快速を利用すれば、1時間前後でアクセスできるスポットが豊富です。
+        </p>
 
-        <div class="spot-grid">
-
-            <div class="spot-card" data-spot="biwako-terrace">
-                <div class="card-header">
-                    1. びわ湖テラス (大津市) 🚡
-                </div>
-                <div class="card-body">
-                    <p><strong>特徴:</strong> 標高1,100mの山頂にあり、琵琶湖の雄大な景色を一望できる絶景カフェテラス。特に水盤テラスはインスタ映えスポットとして大人気です。</p>
-                    <p><strong>見どころ:</strong> 琵琶湖を一望するテラス、ロープウェイからの眺望、冬はスキー場に。</p>
-                    <div class="access-info" id="access-terrace">
-                        <strong>大阪/梅田からのアクセス:</strong>
-                        <span class="highlight-text">JR新快速で「京都」駅を経由し「志賀」駅まで約1時間15分。</span><br>
-                        志賀駅より路線バス（約10分）で「びわ湖バレイ前」へ。
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+            
+            <div class="col">
+                <div class="card shadow h-100">
+                    <div class="card-header card-header-biwako">
+                        1. びわ湖テラス (大津市) 🚡
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text"><strong>特徴:</strong> 標高1,100mの山頂にあり、琵琶湖の雄大な景色を一望できる絶景カフェテラス。インスタ映えスポットとして大人気です。</p>
+                        <p class="card-text"><strong>見どころ:</strong> 琵琶湖を一望するテラス、ロープウェイからの眺望、冬はスキー場に。</p>
+                        <div class="access-info mt-auto" id="access-terrace">
+                            <strong>大阪/梅田からのアクセス:</strong>
+                            JR新快速で「京都」駅を経由し**「志賀」駅まで約1時間15分**。<br>
+                            志賀駅より路線バス（約10分）で「びわ湖バレイ前」へ。
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="spot-card" data-spot="hikone-jo">
-                <div class="card-header">
-                    2. 彦根城 (彦根市) 🏯
-                </div>
-                <div class="card-body">
-                    <p><strong>特徴:</strong> 国宝五城の一つであり、当時の天守がそのまま残る貴重な城。城下町と琵琶湖を望む景色も素晴らしいです。</p>
-                    <p><strong>見どころ:</strong> 現存天守、玄宮園（大名庭園）、彦根城博物館、ひこにゃんの登場。</p>
-                    <div class="access-info">
-                        <strong>大阪/梅田からのアクセス:</strong>
-                        JR新快速で「彦根」駅まで**乗り換えなしで約1時間20分〜1時間30分**。<br>
-                        彦根駅から徒歩約15分。
+            <div class="col">
+                <div class="card shadow h-100">
+                    <div class="card-header card-header-history">
+                        2. 彦根城 (彦根市) 🏯
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text"><strong>特徴:</strong> **国宝五城の一つ**であり、当時の天守がそのまま残る貴重な城。城下町と琵琶湖を望む景色も素晴らしいです。</p>
+                        <p class="card-text"><strong>見どころ:</strong> 現存天守、玄宮園（大名庭園）、彦根城博物館、ひこにゃんの登場。</p>
+                        <div class="access-info mt-auto">
+                            <strong>大阪/梅田からのアクセス:</strong>
+                            JR新快速で「彦根」駅まで**乗り換えなしで約1時間20分〜1時間30分**。<br>
+                            彦根駅から徒歩約15分。
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="spot-card" data-spot="la-collina">
-                <div class="card-header">
-                    3. ラ コリーナ近江八幡 (近江八幡市) 🌾
-                </div>
-                <div class="card-body">
-                    <p><strong>特徴:</strong> 和菓子たねやと洋菓子クラブハリエの旗艦店。緑の芝に覆われた建物が特徴的で、自然と融合したデザインが人気です。</p>
-                    <p><strong>見どころ:</strong> 茅葺き屋根のメインショップ、焼きたてバームクーヘン、フードガレージ、田んぼアート（季節による）。</p>
-                    <div class="access-info">
-                        <strong>大阪/梅田からのアクセス:</strong>
-                        JR新快速で「近江八幡」駅まで**約1時間**。<br>
-                        近江八幡駅北口からバス（約10分）で「北之庄 ラ コリーナ前」下車。
+            <div class="col">
+                <div class="card shadow h-100">
+                    <div class="card-header card-header-biwako">
+                        3. ラ コリーナ近江八幡 (近江八幡市) 🌾
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text"><strong>特徴:</strong> 和菓子たねやと洋菓子クラブハリエの旗艦店。緑の芝に覆われた建物が特徴的で、自然と融合したデザインが人気です。</p>
+                        <p class="card-text"><strong>見どころ:</strong> 茅葺き屋根のメインショップ、焼きたてバームクーヘン、フードガレージ。</p>
+                        <div class="access-info mt-auto">
+                            <strong>大阪/梅田からのアクセス:</strong>
+                            JR新快速で「近江八幡」駅まで**約1時間**。<br>
+                            近江八幡駅北口からバス（約10分）で「ラ コリーナ前」下車。
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="spot-card" data-spot="enryakuji">
-                <div class="card-header">
-                    4. 比叡山延暦寺 (大津市) 🙏
-                </div>
-                <div class="card-body">
-                    <p><strong>特徴:</strong> ユネスコ世界文化遺産。「東の比叡山」とも呼ばれ、日本仏教の母山として知られる寺院群。大津と京都にまたがる広大な敷地です。</p>
-                    <p><strong>見どころ:</strong> 根本中堂（改修中あり）、琵琶湖を望む雄大な景色、パワースポット。</p>
-                    <div class="access-info">
-                        <strong>大阪/梅田からのアクセス:</strong>
-                        JR新快速で「比叡山坂本」駅まで約1時間。<br>
-                        そこから**坂本ケーブル（日本最長）**で山頂へ。
+            <div class="col">
+                <div class="card shadow h-100">
+                    <div class="card-header card-header-history">
+                        4. 比叡山延暦寺 (大津市) 🙏
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text"><strong>特徴:</strong> ユネスコ世界文化遺産。日本仏教の母山として知られる寺院群。琵琶湖と京都を望む雄大な景色が魅力です。</p>
+                        <p class="card-text"><strong>見どころ:</strong> 根本中堂、坂本ケーブル（日本最長）、パワースポット。</p>
+                        <div class="access-info mt-auto">
+                            <strong>大阪/梅田からのアクセス:</strong>
+                            JR新快速で「比叡山坂本」駅まで約1時間。<br>
+                            そこから**坂本ケーブル（日本最長）**で山頂へ。
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,17 +173,15 @@
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 H.K. All Rights Reserved.</p>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdi3iI/p/4+o3x5k/zB4D0Q" crossorigin="anonymous"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // JavaScriptでアクセスの良さを強調するアニメーションを適用
+            // びわ湖テラスのアクセス情報を強調するアニメーション
             const accessElement = document.getElementById('access-terrace');
             
             if (accessElement) {
-                // 3秒後にアニメーション開始（ユーザーが内容を読む時間を与える）
+                // 3秒後にアニメーション開始
                 setTimeout(() => {
                     accessElement.classList.add('animate-access');
                 }, 3000);
@@ -211,16 +191,6 @@
                     accessElement.classList.remove('animate-access');
                 }, 9000);
             }
-
-            // カードにマウスオーバー（タッチ）した時の視覚的なフィードバック
-            document.querySelectorAll('.spot-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
-                });
-            });
         });
     </script>
 </body>
