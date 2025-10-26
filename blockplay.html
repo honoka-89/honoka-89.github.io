@@ -261,7 +261,7 @@
 
         // --- 描画関数 ---
 const ballImage = new Image();
-ballImage.src = 'boll.jpg';
+ballImage.src = 'ball.png';
 
 function drawBall() {
     // ctx.drawImage(画像, x座標, y座標, 幅, 高さ);
@@ -270,8 +270,8 @@ function drawBall() {
         ballImage, 
         ball.x - ball.radius, // x座標 (中心から半径分左)
         ball.y - ball.radius, // y座標 (中心から半径分上)
-        ball.radius * 2,    // 幅 (直径)
-        ball.radius * 2     // 高さ (直径)
+        ball.radius * 5,    // 幅 (直径)
+        ball.radius * 5     // 高さ (直径)
     );
 }
 
